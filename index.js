@@ -21,7 +21,7 @@ const address = {
   city: '',
   country: '',
 };
-const { street: st, city: c, country: cty } = address;
+const { street, city, country } = address;
 
 // Spread operator on Array
 const first = [1, 2, 3, 4];
@@ -40,14 +40,36 @@ const surname = { sur: 'hussain' };
 const added = { ...firstName, ...surname };
 console.log(added); */
 
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
+// function sendCars(...carId) {
+// carId.forEach(id => console.log(id));
+// }
+// sendCars('monday', 5, 8, 6, 7);
 
-  walk() {
-    console.log('what is ur own', this);
+const numbers = [2, 3, 5, 6];
+const [firstNumber, ...restNumber] = numbers;
+console.log(firstNumber);
+console.log(restNumber);
+
+class Car {
+  constructor(maxSpeed, driver) {
+    this.maxSpeed = maxSpeed;
+    this.driver = driver;
+    this.drive = function(speed, time) {
+      console.log(speed * time);
+    };
+    this.logDriver = function() {
+      console.log(`driver name is ${this.driver}`);
+    };
   }
 }
-const person = new Person('Elhussain');
-console.log(person.name);
+const myCar = new Car(40, 'Hussain');
+myCar.drive(50, 5);
+
+const newCar = new Car(70, 'Aminu');
+newCar.drive(20, 2);
+
+const myList = document.getElementsByTagName('a');
+
+for (let index = 0; index < myList.length; index += 1) {
+  myList[index].className = `link-${index}`;
+}
