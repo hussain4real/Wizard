@@ -4,25 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My App</title>
+
+    <title>Mini App</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
-      <h1>Welcome onboard</h1>
-      <p id="first-one">Nice to have have you here</p>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">menu</a>
-            <a href="#">menu</a>
-            <a href="#">menu</a>
-            <a href="#">menu</a>
-            <a href="#">menu</a>
-          </li>
-        </ul>
-      </nav>
+    <div data-cart-info>
+      <h1 class="mdc-typography--headline4">
+        <span class="material-icons">shopping_cart</span>
+        <span data-bill></span>
+      </h1>
     </div>
 
-    <script src="./main.js"></script>
+    <div data-credit-card class="mdc-card mdc-card--outlined">
+      <div class="mdc-card__primary-action">
+        <img data-card-type src="https://placehold.it/120x60.png?text=Card" />
+        <div data-cc-digits>
+          <input type="text" size="4" placeholder="----" />
+          <input type="text" size="4" placeholder="----" />
+          <input type="text" size="4" placeholder="----" />
+          <input type="text" size="4" placeholder="----" />
+        </div>
+        <div data-cc-info>
+          <input type="text" size="20" placeholder="Name Surname" />
+          <input type="text" size="6" placeholder="MM/YY" />
+        </div>
+      </div>
+    </div>
+    <button class="mdc-button" data-pay-btn>Pay Now</button>
+
+    <!-- your HTML goes here -->
+
+    <script src="./index.js"></script>
   </body>
 </html>
